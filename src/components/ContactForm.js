@@ -3,11 +3,12 @@ import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
   const [data, setData] = useState();
-  const { register, errors, handleSubmit } = useForm({
+  const { register, errors, handleSubmit, reset } = useForm({
     mode: "onBlur",
   });
   const onSubmit = (data) => {
     setData(data);
+    reset();
     // reset({
     //   firstname: "",
     //   lastName: "",
